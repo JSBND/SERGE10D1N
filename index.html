@@ -40,12 +40,21 @@
     <p>В своих социальных сетях я пишу стихи, занимаюсь творчеством и рассказываю о том, что создаю. Презентую окружающий мир с точки зрения своего наивного взгляда в розовых очках. Я рад делиться своим позитивным, добрым и практичным взглядом на вещи, которые окружают каждого из нас.</p>
     <p>Звоните, добавляйтесь, пишите. Буду рад.</p>
     <ul>
-      <li><a href='tel://+79170119030'>+7 917 011-90-30</a></li>
-      <li><a href='mailto:iserdmi@gmail.com'>iserdmi@gmail.com</a></li>
-      <li><a href='https://t.me/iserdmi'>Телеграм</a></li>
-      <li><a href='https://instagram.com/iserdmi'>Инстаграм</a></li>
-      <li><a href='https://vk.com/iserdmi'>Вконтакте</a></li>
-      <li><a href='https://facebook.com/iserdmi'>Фейсбук</a></li>
+      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'phone', eventAction: 'click'}); return true;" href='tel://+79170119030'>+7 917 011-90-30</a></li>
+      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'gmail', eventAction: 'click'}); return true;" href='mailto:iserdmi@gmail.com'>iserdmi@gmail.com</a></li>
+      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'tg', eventAction: 'click'}); return true;" target="_blank" href='https://t.me/iserdmi'>Телеграм</a></li>
+      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'inst', eventAction: 'click'}); return true;" target="_blank" href='https://instagram.com/iserdmi'>Инстаграм</a></li>
+      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'vk', eventAction: 'click'}); return true;" target="_blank" href='https://vk.com/iserdmi'>Вконтакте</a></li>
+      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'fb', eventAction: 'click'}); return true;" target="_blank" href='https://facebook.com/iserdmi'>Фейсбук</a></li>
     </ul>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179546619-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-179546619-1');
+    </script>
   </body>
 </html>
