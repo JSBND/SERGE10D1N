@@ -4,27 +4,169 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Сергей Дмитриев</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
     <style>
       body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         line-height: 1.5;
-        margin: 1em;
-        max-width: 40em;
+        font-size: 20px;
       }
       img {
         max-width: 100%;
         height: auto;
-        border: 1px solid #ddd;
       }
-      p, ul, video {
-        margin-bottom: 0.5em;
+      .wrapper {
+        box-sizing: border-box;
+        padding: 80px 70px 80px;
+        max-width: 1140px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .header {
+      }
+      .header .name {
+        position: relative;
+        margin: 0;
+        font-size: 2.2em;
+        line-height: 1.2em;
+        font-weight: bold;
+      }
+      .header .job {
+        margin: 0;
+        font-size: 2.2em;
+        line-height: 1.2em;
+      }
+      .promo {
+        margin-top: 30px;
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      .promo .video {
+        flex: 1 1 100%;
+        font-size: 0;
+      }
+      .promo .video video {
+        height: auto;
+        width: 100%;
+      }
+      .promo .text {
+        flex: 0 0 300px;
+        margin: 0;
+        padding-left: 40px;
+      }
+      @media (max-width: 950px) {
+        .promo {
+          flex-flow: column nowrap;
+        }
+        .promo .video {
+          flex: 1 1 auto;
+        }
+        .promo .text {
+          flex: 1 1 auto;
+          margin-top: 1em;
+          padding-left: 0;
+          max-width: 700px;
+        }
+      }
+      .cols {
+        margin-top: 4em;
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      .cols .left {
+        flex: 1 1 100%;
+      }
+      .cols .right {
+        flex: 0 0 240px;
+        padding-left: 60px;
+      }
+      @media (max-width: 950px) {
+        .cols {
+          flex-flow: column nowrap;
+        }
+        .cols .left {
+          flex: 1 1 auto;
+        }
+        .cols .right {
+          padding-top: 4em;
+          flex: 1 1 auto;
+          padding-left: 0;
+        }
+      }
+      .content {
+
+      }
+      .content h2 {
+        margin: 2em 0 0.6em 0;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 1;
+        position: relative;
+      }
+      .content h2:first-child {
+        margin-top: 0;
+      }
+      .content h3 {
+        margin: 1em 0 0.3em 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1;
+        position: relative;
+      }
+      .content h2 + h3 {
+        margin-top: 0;
+      }
+      .content p {
+        margin: 0;
+      }
+      .content p + p {
+        margin: 0.8em 0 0 0;
+      }
+      .links {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .links li {
         margin-top: 0.5em;
       }
-      h1 {
-        font-size: 2em;
+      .links li:first-child {
         margin-top: 0;
-        margin-bottom: 0;
-        font-weight: bold;
+      }
+      .content a {
+        color: #00c;
+        border-bottom: 1px solid rgba(0,0,204,0.4);
+        text-decoration: none;
+        transition: border-color 700ms ease, color 700ms ease;
+      }
+      .content a:visited {
+        color: #a424e9;
+        border-bottom: 1px solid rgba(164,36,233,0.4);
+      }
+      .content a:hover {
+        color: #c00;
+        border-bottom: 1px solid rgba(204,0,0,0.4);
+        transition: none;
+      }
+      .contacts.floaty .fixed {
+        position: fixed;
+        top: 40px;
+      }
+      .emoji {
+        position: absolute;
+        top: 0;
+        left: -1.2em;
+      }
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+        }
+        .wrapper {
+          padding: 60px 40px 40px 30px;
+        }
+        .header .name .emoji {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -33,22 +175,78 @@
       <li>Русский</li>
       <li><a href="/en">English</a></li>
     </ul>-->
-    <h1>Сергей Дмитриев</h1>
-    <!-- <video style="height: auto; width: 100%; max-width: 40em" src="video.mp4" controls></video> -->
-    <p>Я создаю программные продукты и искренне люблю это дело. Для вас я готов создать веб-сервис, мобильное приложение, интернет-магазин или сайт – любой стартап на ваш вкус. Прошу, обращайтесь.</p>
-    <p>Я провожу консультации для людей, которые хотят создать свой стартап, спроектировать продукт, организовать разработку.</p>
-    <p>Я обучаю людей программированию. Если кто-то хочет стать fullstack javascript разработчиком и изучить React, Node.js, MongoDB и GraphQL, пишите, обучу.</p>
-    <p>Я являюсь создателем сервиса для определения логотипа банков, цветов, телефона и прочего по номеру карты — <a href="https://binking.io">BinKing</a>.</p>
-    <p>В своих социальных сетях пишу о разработке стартапов, анонсирую собственные проекты, обучаю программированию.</p>
-    <p>Звоните, добавляйтесь, пишите. Буду рад.</p>
-    <ul>
-      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'phone', eventAction: 'click'}); ym(67892737, 'reachGoal', 'phone_click'); return true;" href='tel://+79170119030'>+7 917 011-90-30</a></li>
-      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'gmail', eventAction: 'click'}); ym(67892737, 'reachGoal', 'gmail_click'); return true;" href='mailto:iserdmi@gmail.com'>iserdmi@gmail.com</a></li>
-      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'tg', eventAction: 'click'}); ym(67892737, 'reachGoal', 'tg_click'); return true;" target="_blank" href='https://t.me/iserdmi'>Телеграм</a></li>
-      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'inst', eventAction: 'click'}); ym(67892737, 'reachGoal', 'inst_click'); return true;" target="_blank" href='https://instagram.com/iserdmi'>Инстаграм</a></li>
-      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'vk', eventAction: 'click'}); ym(67892737, 'reachGoal', 'vk_click'); return true;" target="_blank" href='https://vk.com/iserdmi'>Вконтакте</a></li>
-      <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'fb', eventAction: 'click'}); ym(67892737, 'reachGoal', 'fb_click'); return true;" target="_blank" href='https://facebook.com/iserdmi'>Фейсбук</a></li>
-    </ul>
+    <div class="wrapper">
+      <div class="header">
+        <h1 class="name"><span class="emoji">🙂</span>Сергей Дмитриев</h1>
+        <p class="job">Разработчик стартапов<p>
+      </div>
+      <div class="promo">
+        <div class="video"><video src="video.mp4" controls></video></div>
+        <p class="text">Я создаю мобильные приложения и веб-сервисы для стартапов. Мне 27 лет. Живу в Самаре. Работаю удалённо. Разработкой занимаюсь 13 лет. Формирую команды разработки. В свободное время занимаюсь развитием собственных АйТи-проектов.</p>
+      </div>
+      <div class="cols">
+        <div class="left">
+          <div class="content">
+            <h2>Схема работы и цены</h2>
+            <h3><span class="emoji">📄</span>Формирование задания</h3>
+            <p>Сначала мы обсуждаем проект и составляем задание на разработку продукта. На этом этапе главное убедиться, что все заинтересованные стороны одинаково понимают, какой продукт должен получиться в итоге. Это можно сделать за 2–3 встречи. Это бесплатно.<br/><a href="#" target="_blank">Посмотрите пример задания.</a></p>
+            <h3><span class="emoji">🎨 </span>Создание дизайна</h3>
+            <p>Затем мы подключаем дизайнера. Дизайнер начинает рисовать макеты страниц будущего сервиса, и каждый день показывает свои наработки. С дизайнером работаем до тех пор, пока не будут утверждены макеты всех экранов сервиса, включая все возможные состояния и адаптацию для мобильных устройств. Дизайн сделают примерно за месяц. За дизайн вы заплатите около 100 000 рублей.<br/><a href="#" target="_blank">Посмотрите пример дизайна.</a></p>
+            <h3><span class="emoji">🖥</span>Программирование</h3>
+            <p>С момента составления задания на разработку, я начинаю разработку бэкенда. Бэкенд — это серверная часть программы. Когда будут готовы первые дизайн макеты, я начну заниматься фронтендом. Фронтенд — это внешняя часть программы, это внешний вид кнопок, форм, и прочих элементов программы. Как только будут запрограммированы первые экраны, я буду заниматься бэкендом и фронтендом параллельно, буду еженедельно показывать вам результаты работы, буду рассказывать, что будет сделано дальше. В течение всего времени сотрудничества за мою работу нужно будет платить 180 000 рублей в месяц. До тех пор, пока вы не решите, что больше вам никакого функционала в программе не надо. Первую версию можно сделать за 2–4 месяца. Хотя бывают такие проекты, где в первой версии нужно слишком много функционала сразу, тогда может уйти и больше.</p>
+            <h3><span class="emoji">✊</span>Команда</h3>
+            <p>Через 1–2 месяца с момента начала разработки, я предложу вам подключить в команду 1–2 программистов, чтобы выпустить продукт быстрее. Дополнительные программисты будут стоить по 130 000 рублей каждый. Это опционально.</p>
+            <h3><span class="emoji">📈</span>Развитие</h3>
+            <p>Дальше продолжаем развитие сервиса параллельно с работой самого сервиса, каждую неделю выкатывая новый функционал для пользователей.</p>
+            <h2>Портфолио</h2>
+            <h3><a href="https://binking.io" target="_blank">BinKing</a></h3>
+            <p>Сервис для определения логотипа банка, цветов банка и прочего по номеру карты, который позволяет создавать более отзывчивые формы для принятия оплаты с банковских карт. Это мой личный проект.</p>
+            <h3><a href="https://suretask.com" target="_blank">SureTask</a></h3>
+            <p>Платформа позволяющая заказчикам и исполнителям найти другу друга. Создавал для заказчика из Англии мобильное приложение и веб-сервис.</p>
+            <h3>Прочие проекты</h3>
+            <p>Ещё я делал платформу для проведения онлайн-курсов, маркетплейс для оптовых покупок,  сервис для посика сотрудников в строительной сфере, и прочие более мелкие продукты, но показать эти проекты, к сожалению, не могу.</p>
+            <h2>Технологии</h2>
+            <p>При разработке я использую React, Apollo, Node.js, MongoDB и Figma для создания дизайна.</p>
+            <p><img src="stack.png" alt="" /></p>
+            <h2>Обучение</h2>
+            <p>Обучаю созданию веб-сервисов и мобильных приложений. Вместе с учащимся в процессе индивидуальных занятий разрабатываем продукт, который придумает сам учащийся. Разрабатываем и бэкенд и фронтенд. Технологии: Node.js, MongoDB, GraphQL, React, ReacNative. Одно занятие 1500 рублей. Первую версию своего продукта можно сделать за 2–3 месяца занятий. Кто хочет обучаться, пишите, договоримся о времени первого занятия.</p>
+          </div>
+        </div>
+        <div class="right">
+          <div class="contacts floaty">
+            <div class="content">
+              <h2>Контакты</h2>
+              <ul class="links">
+                <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'phone', eventAction: 'click'}); ym(67892737, 'reachGoal', 'phone_click'); return true;" href='tel://+79170119030'>+7 917 011-90-30</a></li>
+                <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'gmail', eventAction: 'click'}); ym(67892737, 'reachGoal', 'gmail_click'); return true;" href='mailto:iserdmi@gmail.com'>iserdmi@gmail.com</a></li>
+                <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'tg', eventAction: 'click'}); ym(67892737, 'reachGoal', 'tg_click'); return true;" target="_blank" href='https://t.me/iserdmi'>Телеграм</a></li>
+                <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'inst', eventAction: 'click'}); ym(67892737, 'reachGoal', 'inst_click'); return true;" target="_blank" href='https://instagram.com/iserdmi'>Инстаграм</a></li>
+                <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'vk', eventAction: 'click'}); ym(67892737, 'reachGoal', 'vk_click'); return true;" target="_blank" href='https://vk.com/iserdmi'>Вконтакте</a></li>
+                <li><a onClick="ga('send',{hitType: 'event', eventCategory: 'fb', eventAction: 'click'}); ym(67892737, 'reachGoal', 'fb_click'); return true;" target="_blank" href='https://facebook.com/iserdmi'>Фейсбук</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelector("body").onscroll = () => {
+        const contacts = document.querySelector(".contacts")
+        if (contacts.classList.contains("floaty")) {
+          const content = document.querySelector(".contacts .content")
+          console.log(contacts.getBoundingClientRect().top)
+          if (contacts.getBoundingClientRect().top < 40) {
+            if (!content.classList.contains("fixed")) {
+              content.classList.add("fixed")
+            }
+          } else if (content.classList.contains("fixed")) {
+            if (content.classList.contains("fixed")) {
+              content.classList.remove("fixed")
+            }
+          }
+        }
+      };
+    </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
