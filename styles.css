@@ -78,9 +78,17 @@ img {
   flex: 1 1 100%;
   font-size: 0;
 }
-.promo .video video {
-  height: auto;
+.promo .video .iframe-wrapper {
+  position: relative;
   width: 100%;
+  padding-top: 56%;
+}
+.promo .video .iframe-wrapper iframe {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .promo .text {
   flex: 0 0 300px;
