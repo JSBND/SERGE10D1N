@@ -46,3 +46,28 @@ document.querySelector("body").onscroll = () => {
     }
   }
 };
+window.addEventListener( "load", function () {
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+    XHR.addEventListener("load", function(event) {
+      input.value = ''
+      alert('Скоро перезвоню. Спасибо за заявку!');
+    });
+    XHR.addEventListener( "error", function( event) {
+      alert('Произошла ошибка. Позвоните сами, пожалуйста.');
+    });
+    XHR.open("POST", "https://api.binking.io/sd");
+    XHR.setRequestHeader("Content-type", "application/json");
+    XHR.send(JSON.stringify({phone: input.value}));
+  }
+  const form = document.getElementById("form");
+  const input = document.getElementById("phone-input");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (!input.value) {
+      alert('Укажите номер телефона, пожалуйста');
+      return
+    }
+    sendData();
+  });
+});
