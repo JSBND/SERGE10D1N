@@ -63,7 +63,7 @@ window.addEventListener( "load", function () {
   }
   const form = document.getElementById("form");
   const input = document.getElementById("phone-input");
-  form.addEventListener("submit", function (event) {
+  form && form.addEventListener("submit", function (event) {
     event.preventDefault();
     if (!input.value) {
       alert('Укажите номер телефона, пожалуйста');
