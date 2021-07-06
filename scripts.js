@@ -51,6 +51,7 @@ window.addEventListener( "load", function () {
     const XHR = new XMLHttpRequest();
     XHR.addEventListener("load", function(event) {
       input.value = ''
+      ga('send',{hitType: 'event', eventCategory: 'request', eventAction: 'click'}); ym(67892737, 'reachGoal', 'request');
       alert('Скоро перезвоню. Спасибо за заявку!');
     });
     XHR.addEventListener( "error", function( event) {
