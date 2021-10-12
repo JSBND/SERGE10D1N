@@ -1,36 +1,36 @@
-function getCookie(name) {
-  let matches = document.cookie.match(new RegExp(
-    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-  ));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-function setCookie(name, value, options = {}) {
-  options = {
-    path: '/',
-    'max-age': 999999,
-    ...options
-  };
-  if (options.expires instanceof Date) {
-    options.expires = options.expires.toUTCString();
-  }
-  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-  for (let optionKey in options) {
-    updatedCookie += "; " + optionKey;
-    let optionValue = options[optionKey];
-    if (optionValue !== true) {
-      updatedCookie += "=" + optionValue;
-    }
-  }
-  document.cookie = updatedCookie;
-}
-const lang = navigator.languages
-  ? navigator.languages[0]
-  : (navigator.language || navigator.userLanguage)
-const langWasDetected = getCookie('langWasDetected')
-if (langWasDetected !== '1' && lang !== 'ru' && !(window.location.pathname === '/en' || window.location.pathname === '/en/')) {
-  setCookie('langWasDetected', '1')
-  window.location.href = '/en'
-}
+// function getCookie(name) {
+//   let matches = document.cookie.match(new RegExp(
+//     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+//   ));
+//   return matches ? decodeURIComponent(matches[1]) : undefined;
+// }
+// function setCookie(name, value, options = {}) {
+//   options = {
+//     path: '/',
+//     'max-age': 999999,
+//     ...options
+//   };
+//   if (options.expires instanceof Date) {
+//     options.expires = options.expires.toUTCString();
+//   }
+//   let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+//   for (let optionKey in options) {
+//     updatedCookie += "; " + optionKey;
+//     let optionValue = options[optionKey];
+//     if (optionValue !== true) {
+//       updatedCookie += "=" + optionValue;
+//     }
+//   }
+//   document.cookie = updatedCookie;
+// }
+// const lang = navigator.languages
+//   ? navigator.languages[0]
+//   : (navigator.language || navigator.userLanguage)
+// const langWasDetected = getCookie('langWasDetected')
+// if (langWasDetected !== '1' && lang !== 'ru' && !(window.location.pathname === '/en' || window.location.pathname === '/en/')) {
+//   setCookie('langWasDetected', '1')
+//   window.location.href = '/en'
+// }
 document.querySelector("body").onscroll = () => {
   const contacts = document.querySelector(".contacts")
   if (contacts.classList.contains("floaty")) {
@@ -51,8 +51,9 @@ window.addEventListener( "load", function () {
     const XHR = new XMLHttpRequest();
     XHR.addEventListener("load", function(event) {
       input.value = ''
+      button.classList.remove("loading")
       ga('send',{hitType: 'event', eventCategory: 'request', eventAction: 'click'}); ym(67892737, 'reachGoal', 'request');
-      alert('Скоро перезвоню. Спасибо за заявку!');
+      alert('Скоро перезвоню. Спасибо за обращение!');
     });
     XHR.addEventListener( "error", function( event) {
       alert('Произошла ошибка. Позвоните сами, пожалуйста.');
@@ -63,12 +64,14 @@ window.addEventListener( "load", function () {
   }
   const form = document.getElementById("form");
   const input = document.getElementById("phone-input");
+  const button = document.getElementById("button");
   form && form.addEventListener("submit", function (event) {
     event.preventDefault();
     if (!input.value) {
       alert('Укажите номер телефона, пожалуйста');
       return
     }
+    button.classList.add("loading")
     sendData();
   });
 });
