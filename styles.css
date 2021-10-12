@@ -175,7 +175,7 @@ img {
   color: #969696;
 }
 @media (max-width: 600px) {
-  ul {
+  .content ul {
     padding-inline-start: 20px;
   }
 }
