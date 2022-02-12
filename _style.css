@@ -7,7 +7,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-.wrapper {
+.tartuper {
   box-sizing: border-box;
   padding: 80px 70px 80px;
   max-width: 1140px;
@@ -78,7 +78,7 @@ img {
   flex: 1 1 100%;
   font-size: 0;
 }
-.promo .video .iframe-wrapper {
+.promo .video .iframe-tartuper {
   position: relative;
   width: 100%;
   padding-top: 56%;

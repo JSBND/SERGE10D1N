@@ -22,7 +22,7 @@ img {
 }
 .wrapper {
   box-sizing: border-box;
-  padding: 80px 70px 80px;
+  padding: 60px 70px 80px;
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
@@ -88,8 +88,11 @@ img {
   color: #777777;
   font-style: italic;
 }
+.header .photo {
+  margin-top: 0.8em;
+}
 .header .desc {
-  margin: 0.8em 0 0;
+  margin: 0.4em 0 0;
   font-size: 1.3em;
   line-height: 1.4em;
 }
@@ -149,7 +152,9 @@ img {
   flex: 1 1 100%;
 }
 .cols .right {
-  flex: 0 0 240px;
+  flex: 0 0 200px;
+  position: relative;
+  width: 200px;
   padding-left: 60px;
 }
 @media (max-width: 950px) {
@@ -230,11 +235,20 @@ img {
   display: flex;
   flex-flow: row wrap;
   margin: 0 -1em -1.5em;
+  font-size: 0.7em;
 }
 .team .member {
   box-sizing: border-box;
   padding: 0 1em 1.5em 1em;
-  flex: 1 1 50%;
+  flex: 1 1 33%;
+}
+@media (max-width: 800px) {
+  .team {
+    font-size: 1em;
+  }
+}
+.team .member:last-child {
+  flex: 1 1 100%;
 }
 @media (max-width: 800px) {
   .team .member {
@@ -243,6 +257,13 @@ img {
 }
 .team .member .name {
   margin-top: 0;
+}
+.team .member .desc {
+}
+.team .member .photo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 0.3em;
 }
 .advantages {
   display: flex;
@@ -435,7 +456,17 @@ img {
    margin-left: -20px;
    top: 50%;
    margin-top: -20px;
-
+}
+.button.magnet {
+  white-space: break-spaces;
+  max-width: 100%;
+  font-size: 0.7em;
+  margin-top: 3em;
+}
+@media (max-width: 950px) {
+  .button.magnet {
+    display: none;
+  }
 }
 @media (max-width: 400px) {
   .form {
@@ -483,6 +514,7 @@ img {
 }
 .contacts.floaty .fixed {
   position: fixed;
+  width: 200px;
   top: 40px;
 }
 .icon {
@@ -495,6 +527,24 @@ img {
   width: 1em;
   height: 1em;
   max-width: none;
+}
+.screen-wrapper + p {
+  margin-top: 0 ! important;
+}
+.screen-wrapper {
+  box-sizing: border-box;
+  margin: 0 -27px -10px !important;
+}
+@media (max-width: 700px) {
+  .screen-wrapper {
+    margin-bottom: 0 !important;
+  }
+}
+@media (max-width: 600px) {
+  .screen-wrapper {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+  }
 }
 @media (max-width: 700px) {
   .header {
@@ -513,12 +563,17 @@ img {
     align-self: flex-start;
   }
 }
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 50px 70px 80px;
+  }
+}
 @media (max-width: 600px) {
   body {
     font-size: 14px;
   }
   .wrapper {
-    padding: 60px 40px 40px 30px;
+    padding: 30px 40px 40px 30px;
   }
   .header .name .icon {
     display: none;
