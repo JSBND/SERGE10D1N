@@ -88,25 +88,6 @@ img {
   color: #777777;
   font-style: italic;
 }
-.header .dot {
-  margin: 0 0.5em;
-  position: relative;
-}
-.header .dot span {
-  font-size: 0;
-}
-.header .dot:after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 2px;
-  background: #777777;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -2px;
-  margin-right: -2px;
-}
 .header .photo {
   margin-top: 0.8em;
 }
